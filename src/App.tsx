@@ -60,6 +60,18 @@ function App() {
           backgroundImage: `url('${mobileBackground}')`,
         }}
       />
+      <p className="pt-4">The responsive image</p>
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcSet={desktopBackground}
+        />
+        <source
+          media="(min-width: 640px)"
+          srcSet={tabletBackground}
+        />
+        <img className="h-48 w-96 object-contain" srcSet={mobileBackground} />
+      </picture>
     </>
   );
 }
